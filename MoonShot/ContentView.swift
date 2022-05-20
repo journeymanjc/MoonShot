@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image("space")
-			 .resizable()
-			 .scaledToFill()
-			 .frame(width:300,height: 300)
-			 //.clipped()
+		 GeometryReader { geo in
+			 Image("space")
+				 .resizable()
+				 .scaledToFit()
+				 .frame(width: geo.size.width * 0.8)
+				 .frame(width: geo.size.width, height: geo.size.height)
+		 }
     }
 }
 
