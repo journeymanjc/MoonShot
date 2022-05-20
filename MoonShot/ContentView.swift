@@ -9,14 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-		 ScrollView{
-			 LazyVStack(spacing: 10){
-				 ForEach(0..<100){
-					CustomText("Item \($0)")
-						 .font(.title)
+		 NavigationView{
+			 List(0..<100) { row in
+				 NavigationLink{
+					 Text("Detail \(row)")
+				 } label: {
+					 Text("Hello, World!")
+						 .padding()
 				 }
 			 }
-			 .frame(maxWidth:.infinity)
+			 .navigationTitle("SwiftUI")
 		 }
     }
 }
